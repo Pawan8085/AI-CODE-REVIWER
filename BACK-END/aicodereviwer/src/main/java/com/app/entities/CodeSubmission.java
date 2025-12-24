@@ -1,6 +1,7 @@
 package com.app.entities;
 
 import jakarta.persistence.*;
+import lombok.Builder;
 import lombok.Data;
 
 import java.time.LocalDateTime;
@@ -9,6 +10,7 @@ import java.util.UUID;
 @Data
 @Entity
 @Table(name = "code_submission")
+@Builder
 public class CodeSubmission {
 
     @Id

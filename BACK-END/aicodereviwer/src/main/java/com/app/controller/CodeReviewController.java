@@ -1,6 +1,7 @@
 package com.app.controller;
 
-import com.app.entities.CodeSubmission;
+import com.app.dto.request.CodeSubmissionRequest;
+import com.app.dto.response.CodeSubmissionResponse;
 import com.app.service.CodeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -22,7 +23,7 @@ public class CodeReviewController {
     }
 
     @PostMapping("/upload")
-    public ResponseEntity<CodeSubmission> codeSubmissionHandler(@RequestBody CodeSubmission codeSubmission){
+    public ResponseEntity<CodeSubmissionResponse> codeSubmissionHandler(@RequestBody CodeSubmissionRequest codeSubmission){
 
         return  ResponseEntity.ok(codeService.createCodeSubmission(codeSubmission));
     }
